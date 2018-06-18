@@ -16,6 +16,9 @@ var rename = require('gulp-rename');
 var imagemin = require( 'gulp-imagemin' );
 var notify   = require( 'gulp-notify' );
 var clean = require('gulp-clean');
+var less = require('gulp-less');
+var path = require('path');
+var cleanCSS = require('gulp-clean-css');
 
 /** Variables **/
 var src  = './src/';
@@ -46,7 +49,7 @@ gulp.task('greet', function () {
  * Task: build
  * Build the package.
  */
-gulp.task('build', ['minify', 'copy:libs', 'optimize:image']);
+gulp.task('build', ['minify', 'copy:libs', 'optimize:image', 'compile:css']);
 
 /**
  * Task: minify
@@ -122,4 +125,20 @@ gulp.task('watch', function() {
     gulp.watch( src + 'js/**/*.js', function(event) {
         gulp.start('minify');
     });
+});
+
+/**
+ * Task: compile:css
+ * Source: https://www.npmjs.com/package/gulp-less
+ * Source: https://www.npmjs.com/package/gulp-clean-css
+ * Compile LESS to CSS and minify.
+ */
+gulp.task('compile:css', function () {
+  return gulp.src( src + 'less/**/*.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest(distHtml + 'css'))
+    .pipe( notify( { message: 'DONE: CSS compiled!', onLast: true } ) );
 });
