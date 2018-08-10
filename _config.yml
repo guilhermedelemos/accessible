@@ -1,0 +1,42 @@
+# Site settings
+title:       Accessible
+email:       your_email@example.com
+author:      John Otander
+description: "A simple and accessible theme for Jekyll."
+baseurl:     ""
+url:         "https://accessible.github.io"
+date_format: "%b %-d, %Y"
+
+#
+markdown:     kramdown
+permalink:    pretty
+paginate:     4
+sass:
+  style: compressed
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Time Zone: Set the time zone for site generation.
+timezone: UTC
+# Encoding: Set the encoding of files by name
+encoding: utf-8
+# Drafts: Process and render draft posts.
+show_drafts: false
+# Future: Publish posts or collection documents with a future date.
+future: true
+# Incremental build: Enable the experimental incremental build feature.
+incremental: false
+# Strict Front Matter: Cause a build to fail if there is a YAML syntax error in a page's front matter.
+strict_front_matter: true
+# Local Server Port: Listen on the given port.
+#port: 4000
+# Local Server Hostname
+#host: 127.0.0.1
+# Base URL: Serve the website from the given base URL.
+#baseurl: accessible/
+
+exclude:
+  - .idea
+
+permalink: /blog/:year/:month/:day/:title

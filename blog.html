@@ -1,0 +1,15 @@
+---
+title: Blog
+layout: page
+#permalink: "/blog/"
+#tags: page livros sugestões leitura
+---
+<h1>Blog!</h1>
+{% assign sorted = site.posts | sort: 'date' | reverse %}
+{% for item in sorted %}
+<h3>
+    [{{ item.date | date: "%Y-%m-%d %k:%M:%S" }}]
+    <a href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a>.
+
+</h3>
+{% endfor %}
