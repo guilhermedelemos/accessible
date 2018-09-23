@@ -2,6 +2,7 @@
 layout: page
 title: Blog
 permalink: /blog/
+icon: fas fa-copy
 ---
 
 <ul>

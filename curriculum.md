@@ -2,6 +2,7 @@
 layout: page
 title: Curriculum
 permalink: /curriculum/
+icon: fas fa-address-card
 ---
 
 <h1>Sites / Redes Sociais</h1>

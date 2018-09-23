@@ -10,20 +10,20 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/">&nbsp;</a>
+              <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
             </li>
           </ul>
           <ul class="navbar-nav mt-2 mt-md-0">
-              {%- if page_paths -%}
-            {%- for path in page_paths -%}
-              {%- assign my_page = site.pages | where: "path", path | first -%}
-              {%- if my_page.title -%}
-              <li class="nav-item">
-                <a class="nav-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+{%- if page_paths -%}
+    {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ my_page.url | relative_url }}">{%- if my_page.icon -%}<i class="{{ my_page.icon }}"></i>{% else %}<i class="fas fa-file"></i>{%- endif -%}&nbsp;{{ my_page.title | escape }}</a>
               </li>
-              {%- endif -%}
-            {%- endfor -%}
-            {%- endif -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
           </ul>
         </div>
       </nav>
