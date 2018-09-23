@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Arquivo
-permalink: /arquivo/
+title: Archive
+permalink: /archive/
 ---
 
 <hr>
@@ -15,6 +15,6 @@ permalink: /arquivo/
 
 <hr>
 
-<h1>Curriculo</h1>
-Teste .
+<h1>Curriculum</h1>
+Test.
 
